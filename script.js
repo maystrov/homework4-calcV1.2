@@ -10,17 +10,18 @@ do {
         5. pow 
         6. cos
         7. sin
+        8. history
        `);
        if (operation === null) {
-           alert('Enter any number from 1 to 7! Do not click No-button!');
+           alert('Enter any number from 1 to 8! Do not click No-button!');
            continue;
        } 
        operation = +operation;
-       if (operation !== operation || operation <= 0 || operation > 7) {
-        alert('Wrong input data! Enter any number from 1 to 7!');
+       if (operation !== operation || operation <= 0 || operation > 8) {
+        alert('Wrong input data! Enter any number from 1 to 8!');
     }
         
-    } while (operation !== operation || operation <= 0 || operation > 7) ;
+    } while (operation !== operation || operation <= 0 || operation > 8) ;
 
     let result;
     
@@ -50,20 +51,25 @@ do {
                 result = `pow ${firstOperand} to the power of ${secondOperand} = ${Math.pow(firstOperand, secondOperand)}`;     
         } 
     }   else {
-            let angle;
-            do {
-                angle = +prompt('Enter angle');
-            } while(angle !== angle);
-            if (operation == 6) {
-                result = `cos ${angle} = ${Math.cos(angle)}`;
+            if (operation == 8) {
+                alert(`your history is : ${historyArray}`)
+                continue;
             }
             else {
-                result = `sin ${angle} = ${Math.sin(angle)}`;
+                let angle;
+                do {
+                    angle = +prompt('Enter angle:');
+                } while(angle !== angle);
+    
+                if (operation == 7) {
+                    result = `sin ${angle} = ${Math.sin(angle)}`;
+                }
+                else {
+                    result = `cos ${angle} = ${Math.cos(angle)}`;
+                }
             }
     }
     historyArray[historyArray.length] = `\n ${result}`;
     alert(`Your result is: ${result}`)
-    alert(`your history is : ${historyArray}`)
-
 }   while(confirm('Do you want to calculate again?'));
 
