@@ -23,9 +23,16 @@ do {
     } while (operation !== operation || operation <= 0 || operation > 7) ;
 
     let result;
+    
     if (operation < 6) {
-        const firstOperand = +prompt('Enter first operand:');
-        const secondOperand = +prompt('Enter second operand:');
+        let firstOperand;
+        let secondOperand;
+        do {
+            firstOperand = +prompt('Enter first operand:');
+        } while(firstOperand !== firstOperand);
+        do {
+            secondOperand = +prompt('Enter second operand:');
+        } while(secondOperand !== secondOperand);
         switch (operation) {
             case 1:
                 result = `${firstOperand} + ${secondOperand} = ${firstOperand + secondOperand}`;
@@ -43,7 +50,10 @@ do {
                 result = `pow ${firstOperand} to the power of ${secondOperand} = ${Math.pow(firstOperand, secondOperand)}`;     
         } 
     }   else {
-            const angle = +prompt('Enter angle');
+            let angle;
+            do {
+                angle = +prompt('Enter angle');
+            } while(angle !== angle);
             if (operation == 6) {
                 result = `cos ${angle} = ${Math.cos(angle)}`;
             }
